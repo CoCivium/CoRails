@@ -1,21 +1,12 @@
-# CoRails
-Canonical register for CoCivium rails (BPOE, CoVows, CoProtocats, protocol rules).
+* text=auto
 
-**Rule:** chat is not the ledger. All rails live here (or in vault) as versioned files + receipts.
-
-## Structure
-- ledger/CoRails_Ledger.ndjson (append-only events)
-- ules/*.md (canonical rules)
-- generated/ (register outputs)
-- eceipts/ (sha receipts)
-- scripts/ (rebuild/validate tooling)
-
-## One command
-Run:
-powershell -ExecutionPolicy Bypass -File .\scripts\CoRails_Rebuild.ps1 -CoRailsRoot .
-"@ | Set-Content -LiteralPath README.md -Encoding utf8
-
-@"
+*.md     text eol=lf
+*.ps1    text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.json   text eol=lf
+*.ndjson text eol=lf
 *.sha256 text eol=lf
-*.md    text eol=lf
-*.ps1   text eol=lf
+
+*.zip    binary
+*.png    binary
