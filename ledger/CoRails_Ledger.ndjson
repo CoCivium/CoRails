@@ -1,3 +1,4 @@
 {"event":"INIT","ts":"20260122T223014Z","note":"CoRails ledger initialized"}
 {"event":"ADD_RULE","id":"BPOE-0001","note":"Automation-first; assume manual steps fail unless evidence read-back verifies.","path":"CoRails/rules/BPOE-0001.md","sha256":"e317e454ca76fbde514ec5c5c7b73791d68529436287742e2b5d4f579494fe36","ts":"20260122T223642Z"}
 {"event":"ADD_RULE","id":"BPOE-0002","note":"Chat not ledger; SideNotes are micro '#...' only; long notes become files w/ SHA.","path":"CoRails/rules/BPOE-0002.md","sha256":"3bbaf20c9adcdba3784e3e9d80495a752282eec66950066daba43a66a3137f2c","ts":"20260122T230356Z"}
+{"event":"ADD_RULE","id":"CORAILS-ID-SCHEME","note":"IDs are stable identity; priority is separate; no renumbering.","path":"CoRails/rules/CORAILS-ID-SCHEME.md","sha256":"fbd0c2a9aae86ee71548cf2067493fea86033faf935402f2fc782663e2cd8c70","ts":"20260122T235004Z"}
