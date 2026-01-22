@@ -1,0 +1,2 @@
+{"event":"INIT","ts":"20260122T223014Z","note":"CoRails ledger initialized"}
+{"event":"ADD_RULE","id":"BPOE-0001","note":"Automation-first; assume manual steps fail unless evidence read-back verifies.","path":"CoRails/rules/BPOE-0001.md","sha256":"e317e454ca76fbde514ec5c5c7b73791d68529436287742e2b5d4f579494fe36","ts":"20260122T223642Z"}

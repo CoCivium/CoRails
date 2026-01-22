@@ -1,0 +1,32 @@
+{
+  "generated_utc": "20260122T224654Z",
+  "ledger_events": 2,
+  "rule_files": 2,
+  "rules": [
+    {
+      "id": "BPOE-0001",
+      "sha256": "e317e454ca76fbde514ec5c5c7b73791d68529436287742e2b5d4f579494fe36",
+      "path": "C:\\Users\\Chris\\CoRails\\rules\\BPOE-0001.md"
+    },
+    {
+      "id": "CORAILS-LEDGER-SCHEMA",
+      "sha256": "0dc0da91135296deb4229e5e9c727ab1a839d8a9cfbf52393d5d00e6bce66de5",
+      "path": "C:\\Users\\Chris\\CoRails\\rules\\CORAILS-LEDGER-SCHEMA.md"
+    }
+  ],
+  "events": [
+    {
+      "event": "INIT",
+      "ts": "20260122T223014Z",
+      "note": "CoRails ledger initialized"
+    },
+    {
+      "event": "ADD_RULE",
+      "id": "BPOE-0001",
+      "note": "Automation-first; assume manual steps fail unless evidence read-back verifies.",
+      "path": "CoRails/rules/BPOE-0001.md",
+      "sha256": "e317e454ca76fbde514ec5c5c7b73791d68529436287742e2b5d4f579494fe36",
+      "ts": "20260122T223642Z"
+    }
+  ]
+}
