@@ -10,23 +10,18 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Git sanity
-        shell: pwsh
-        run: |
-          git config core.autocrlf false
-          git config core.eol lf
-          pwsh --version
-          git --version
+
       - name: Rebuild register
         shell: pwsh
         run: |
-          \Stop = 'Stop'
+          $ErrorActionPreference = 'Stop'
           Set-StrictMode -Version Latest
           pwsh -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File .\scripts\CoRails_Rebuild.ps1 -CoRailsRoot .
+
       - name: Ensure no drift (print diff)
         shell: pwsh
         run: |
-          \Stop = 'Stop'
+          $ErrorActionPreference = 'Stop'
           Set-StrictMode -Version Latest
           git status --porcelain
           git diff --name-only
