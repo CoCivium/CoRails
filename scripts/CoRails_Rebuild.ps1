@@ -86,7 +86,7 @@ $register = [pscustomobject]@{
 }
 
 # JSON (stable LF/noBOM)
-WriteUtf8NoBomLf $outJson ((ConvertTo-Json $register -Depth 8) + "`n")
+WriteUtf8NoBomLf $outJson ((ConvertTo-Json $register -Depth 8 -Compress) + "`n")
 
 # MD (stable LF/noBOM)
 $md = @()
@@ -124,3 +124,4 @@ $rcptText = @(
 WriteAsciiLf $rcpt ($rcptText + "`n")
 
 Write-Host "OK: rebuilt CoRails register (deterministic). Receipt: receipts/CoRails_Register.sha256"
+
