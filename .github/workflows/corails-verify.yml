@@ -1,0 +1,25 @@
+name: CoRails Verify
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild register
+        shell: pwsh
+        run: |
+          \Stop = 'Stop'
+          Set-StrictMode -Version Latest
+          pwsh -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File .\scripts\CoRails_Rebuild.ps1 -CoRailsRoot .
+      - name: Ensure no drift
+        shell: pwsh
+        run: |
+          \Stop = 'Stop'
+          Set-StrictMode -Version Latest
+          git status --porcelain
+          if( (git status --porcelain) ) { throw "CoRails drift: generated/ or receipts/ changed. Run rebuild locally and commit." }
