@@ -1,22 +1,22 @@
 {
-  "generated_utc": "20260122T230357Z",
+  "as_of_utc": "20260122T230356Z",
   "ledger_events": 3,
   "rule_files": 3,
   "rules": [
     {
       "id": "BPOE-0001",
-      "sha256": "e317e454ca76fbde514ec5c5c7b73791d68529436287742e2b5d4f579494fe36",
-      "path": "C:\\Users\\Chris\\CoRails\\rules\\BPOE-0001.md"
+      "path": "rules/BPOE-0001.md",
+      "sha256": "e317e454ca76fbde514ec5c5c7b73791d68529436287742e2b5d4f579494fe36"
     },
     {
       "id": "BPOE-0002",
-      "sha256": "3bbaf20c9adcdba3784e3e9d80495a752282eec66950066daba43a66a3137f2c",
-      "path": "C:\\Users\\Chris\\CoRails\\rules\\BPOE-0002.md"
+      "path": "rules/BPOE-0002.md",
+      "sha256": "3bbaf20c9adcdba3784e3e9d80495a752282eec66950066daba43a66a3137f2c"
     },
     {
       "id": "CORAILS-LEDGER-SCHEMA",
-      "sha256": "0dc0da91135296deb4229e5e9c727ab1a839d8a9cfbf52393d5d00e6bce66de5",
-      "path": "C:\\Users\\Chris\\CoRails\\rules\\CORAILS-LEDGER-SCHEMA.md"
+      "path": "rules/CORAILS-LEDGER-SCHEMA.md",
+      "sha256": "0dc0da91135296deb4229e5e9c727ab1a839d8a9cfbf52393d5d00e6bce66de5"
     }
   ],
   "events": [
