@@ -10,16 +10,25 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Git sanity
+        shell: pwsh
+        run: |
+          git config core.autocrlf false
+          git config core.eol lf
+          pwsh --version
+          git --version
       - name: Rebuild register
         shell: pwsh
         run: |
           \Stop = 'Stop'
           Set-StrictMode -Version Latest
           pwsh -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File .\scripts\CoRails_Rebuild.ps1 -CoRailsRoot .
-      - name: Ensure no drift
+      - name: Ensure no drift (print diff)
         shell: pwsh
         run: |
           \Stop = 'Stop'
           Set-StrictMode -Version Latest
           git status --porcelain
-          if( (git status --porcelain) ) { throw "CoRails drift: generated/ or receipts/ changed. Run rebuild locally and commit." }
+          git diff --name-only
+          git diff
+          if( (git status --porcelain) ) { throw "CoRails drift: generated/ or receipts/ changed. See diff above." }
