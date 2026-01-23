@@ -1,8 +1,8 @@
 # CoRails Register
 
-* As-of (UTC): 20260123T013916Z
-* Ledger events: 12
-* Rule files: 9
+* As-of (UTC): 20260123T015624Z
+* Ledger events: 13
+* Rule files: 10
 
 ## Rules (by file)
 - **BPOE-0001** — sha256=9c96c1c2eca9fb42a7ee235338cf97f4cccbec170690b538a317cd6f48dea26e — rules/BPOE-0001.md
@@ -11,6 +11,7 @@
 - **BPOE-0004** — sha256=b8806e49bc3a37047f3a0ad024609431e6dccefcc88e7f922d2b4335716c60f3 — rules/BPOE-0004.md
 - **BPOE-0005** — sha256=57b0195b4ee79b9dcda650e16113465daa637b091415e0e3ccf1ccc36f28c5aa — rules/BPOE-0005.md
 - **BPOE-0006** — sha256=050970b8e9b4d5809014ddc5823ee398ea83689ab65ed17d12c9b29e99cb66ff — rules/BPOE-0006.md
+- **BPOE-0007** — sha256=2ac14da330d6c3aa73fa135863818544fa9b34e8dd1b8607323d0b3349ca61f2 — rules/BPOE-0007.md
 - **CORAILS-ID-SCHEME** — sha256=6cf90ac70b7feb532d8835ae85739ebcd7fe3f93ad22d7ed9e984ae86408e507 — rules/CORAILS-ID-SCHEME.md
 - **CORAILS-LEDGER-SCHEMA** — sha256=be7c9271d08a0bb0792a72f63be013f740a958d8ea6c62248ff5c6d9c81dc74c — rules/CORAILS-LEDGER-SCHEMA.md
 - **CORAILS-PLACEHOLDER-SAFE** — sha256=40a989d1d16017b2e16a4e65150960cb1423a38ef007fb7af2c8f06403297b38 — rules/CORAILS-PLACEHOLDER-SAFE.md
@@ -28,3 +29,4 @@
 - 20260123T013914Z — UPD_RULE — CORAILS-PLACEHOLDER-SAFE Repair rule file; ban <...> placeholders + ban markdown fences in PS prompts; use RUN_ID_HERE/{RUN_ID}/vars.
 - 20260123T013915Z — UPD_RULE — BPOE-0005 Switch to PreBakeSandbox: each wave emits one DO block + writes NEXT wave script locally for immediate execution.
 - 20260123T013916Z — ADD_RULE — BPOE-0006 NoHereStringsInChatDO: prefer line arrays; if unavoidable use single-quoted + never nested; ban markdown fences in PS prompts.
+- 20260123T015624Z — ADD_RULE — BPOE-0007 CoGuardHeartbeat: emit GREEN/YELLOW/RED each wave based on determinism+CI.
