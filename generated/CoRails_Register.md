@@ -1,7 +1,7 @@
 # CoRails Register
 
-* As-of (UTC): 20260123T011336Z
-* Ledger events: 7
+* As-of (UTC): 20260123T011345Z
+* Ledger events: 8
 * Rule files: 6
 
 ## Rules (by file)
@@ -20,3 +20,4 @@
 - 20260123T003055Z — ADD_RULE — BPOE-0003 CoPulse: one micro-question per wave; answer q1..q9 using compact icon anchors.
 - 20260123T005444Z — UPD_RULE — BPOE-0003 CoPulse-3: one micro-question per wave; reply !1=CoGo, !2=CoMeh, !3=CoNo.
 - 20260123T011336Z — ADD_RULE — BPOE-0004 NoPause default: keep executing until explicit stop token (CoStop/!3).
+- 20260123T011345Z — ADD_RULE — CORAILS-PLACEHOLDER-SAFE Ban <PLACEHOLDERS> in PS examples; use RUN_ID_HERE / {RUN_ID} / vars.
