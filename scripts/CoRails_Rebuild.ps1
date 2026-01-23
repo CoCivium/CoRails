@@ -12,13 +12,12 @@ function Sha256CanonicalText([string]$p){
   $t = ($t -replace "`r`n","`n" -replace "`r","`n")
   $bytes = $utf8NoBom.GetBytes($t)
   $sha = [System.Security.Cryptography.SHA256]::Create()
-  ($sha.ComputeHash($bytes) | ForEach-Object { param(
-  [string]$CoRailsRoot = (Get-Location)
-)
-$ErrorActionPreference="Stop"; Set-StrictMode -Version Latest
-
-function Sha256File([string]$p){
-  (Get-FileHash -Algorithm SHA256 -LiteralPath $p).Hash.ToLowerInvariant()
+  try {
+    $hashBytes = $sha.ComputeHash($bytes)
+    return ([BitConverter]::ToString($hashBytes) -replace '-','').ToLowerInvariant()
+  } finally {
+    $sha.Dispose()
+  }
 }
 function WriteUtf8NoBomLf([string]$path,[string]$text){
   $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
@@ -294,6 +293,7 @@ $rcptText = @(
 WriteAsciiLf $rcpt ($rcptText + "`n")
 
 Write-Host "OK: rebuilt CoRails register (deterministic). Receipt: receipts/CoRails_Register.sha256"
+
 
 
 
