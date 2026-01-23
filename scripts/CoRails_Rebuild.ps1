@@ -1,5 +1,5 @@
 param(
-  [string]$CoRailsRoot = (Join-Path (Get-Location) "CoRails")
+  [string]$CoRailsRoot = (Get-Location)
 )
 $ErrorActionPreference="Stop"; Set-StrictMode -Version Latest
 
@@ -13,7 +13,7 @@ function Sha256CanonicalText([string]$p){
   $bytes = $utf8NoBom.GetBytes($t)
   $sha = [System.Security.Cryptography.SHA256]::Create()
   ($sha.ComputeHash($bytes) | ForEach-Object { param(
-  [string]$CoRailsRoot = (Join-Path (Get-Location) "CoRails")
+  [string]$CoRailsRoot = (Get-Location)
 )
 $ErrorActionPreference="Stop"; Set-StrictMode -Version Latest
 
@@ -59,7 +59,22 @@ New-Item -ItemType Directory -Force -Path (Split-Path $outMd)   | Out-Null
 New-Item -ItemType Directory -Force -Path (Split-Path $outJson) | Out-Null
 New-Item -ItemType Directory -Force -Path (Split-Path $rcpt)    | Out-Null
 
-if(-not (Test-Path $ledger)){ throw "Missing ledger: $ledger" }
+if(-not (Test-Path $ledger)){
+  # Fallback: parent root (handles accidental CoRails/CoRails)
+  $p = Split-Path -Parent $CoRailsRoot
+  $alt = Join-Path $p "ledger/CoRails_Ledger.ndjson"
+  if(Test-Path $alt){
+    $CoRailsRoot = $p
+    $ledger   = Join-Path $CoRailsRoot "ledger/CoRails_Ledger.ndjson"
+    $rulesDir = Join-Path $CoRailsRoot "rules"
+    $outMd    = Join-Path $CoRailsRoot "generated/CoRails_Register.md"
+    $outJson  = Join-Path $CoRailsRoot "generated/CoRails_Register.json"
+    $rcpt     = Join-Path $CoRailsRoot "receipts/CoRails_Register.sha256"
+  } else {
+    throw "Missing ledger: $ledger"
+  }
+}
+# Fallback: parent root
 
 # Parse ledger (preserve order)
 $events = @()
@@ -185,7 +200,22 @@ New-Item -ItemType Directory -Force -Path (Split-Path $outMd)   | Out-Null
 New-Item -ItemType Directory -Force -Path (Split-Path $outJson) | Out-Null
 New-Item -ItemType Directory -Force -Path (Split-Path $rcpt)    | Out-Null
 
-if(-not (Test-Path $ledger)){ throw "Missing ledger: $ledger" }
+if(-not (Test-Path $ledger)){
+  # Fallback: parent root (handles accidental CoRails/CoRails)
+  $p = Split-Path -Parent $CoRailsRoot
+  $alt = Join-Path $p "ledger/CoRails_Ledger.ndjson"
+  if(Test-Path $alt){
+    $CoRailsRoot = $p
+    $ledger   = Join-Path $CoRailsRoot "ledger/CoRails_Ledger.ndjson"
+    $rulesDir = Join-Path $CoRailsRoot "rules"
+    $outMd    = Join-Path $CoRailsRoot "generated/CoRails_Register.md"
+    $outJson  = Join-Path $CoRailsRoot "generated/CoRails_Register.json"
+    $rcpt     = Join-Path $CoRailsRoot "receipts/CoRails_Register.sha256"
+  } else {
+    throw "Missing ledger: $ledger"
+  }
+}
+# Fallback: parent root
 
 # Parse ledger (preserve order)
 $events = @()
@@ -264,5 +294,6 @@ $rcptText = @(
 WriteAsciiLf $rcpt ($rcptText + "`n")
 
 Write-Host "OK: rebuilt CoRails register (deterministic). Receipt: receipts/CoRails_Register.sha256"
+
 
 
