@@ -1,5 +1,6 @@
 name: CoRails Verify
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -27,3 +28,4 @@ jobs:
           git diff --name-only
           git diff
           if( (git status --porcelain) ) { throw "CoRails drift: generated/ or receipts/ changed. See diff above." }
+
