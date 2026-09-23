@@ -1,0 +1,45 @@
+{
+  "readproof_id": "coreceiverreadproof:corails:cooutputcontract:20260923T114111Z",
+  "receiver_id": "CoRails.GitHubReceiverLane.v0.1",
+  "receiver_surface": "CoCivium/CoRails:INBOX",
+  "observed_at": "2026-09-23T11:41:11Z",
+  "source_plan": {
+    "repository": "CoCivium/CoSteward",
+    "path": "docs/session_backchannel/coevo_plans/CoMindshare260916_R2_20260923T112639Z.json",
+    "commit_sha": "8c17fa0dba18ecd63eb7dbac9c7408351679658e",
+    "blob_sha": "98dba24f2cfc89e20502105ca08293bcbf043a9b"
+  },
+  "spawn_id": "cospawn:1D184B5E7BD4F9F86DEAA88D",
+  "disposition": "DONATE_TO_EXISTING_OBJECT",
+  "semantic_coverage": "FULL_CONTRACT_READ",
+  "evidence_refs": [
+    "CoCivium/CoSteward@8c17fa0dba18ecd63eb7dbac9c7408351679658e:docs/session_backchannel/coevo_plans/CoMindshare260916_R2_20260923T112639Z.json",
+    "CoCivium/CoCivium@a5e0caa06b5b1316de528fbbc6e4c942a72dd10e:docs/UX/COFLEET_RICKBAR_R4.md",
+    "CoCivium/CoCivium@6b105678b1e17db7fa4ed3a2ea6dc5fb71027d2a:CoFleetProjection.R4A",
+    "CoCivium/CoRails@8d21b912f8e6f4d9368b6d7ea891f03c89cce551:README.md",
+    "CoCivium/CoSteward@32ca83cf6ba2011298e8f47354204df6fe2ea119:docs/session_backchannel/contracts/CoReceiverReadproof_v0_1.schema.json"
+  ],
+  "accepted_scope": [
+    "CoRails receiver has read the exact CoOutputContract+ logical contract identified by spawn_id.",
+    "Donate overlapping quiet-front-door, evidence-drilldown, coverage-qualified projection, and nonpromotion semantics to the existing CoFleetProjection+/RickBar R4 lineage for reconciliation.",
+    "Preserve the remaining general CoOutputContract+ delta as a candidate reusable projection contract rather than treating fleet-specific UX as total coverage."
+  ],
+  "rejected_scope": [
+    "No claim that CoFleet R4 fully implements CoOutputContract+.",
+    "No RickBar runtime binding.",
+    "No global fleet census.",
+    "No canon, CoEx, authority transfer, or universal rail adoption."
+  ],
+  "contradictions": [],
+  "next_deed": "Reconcile the reusable non-fleet CoOutputContract+ remainder against current CoRails/CoAura projection rules before proposing any adopted rule.",
+  "pickup_claim": "PICKED_UP_FOR_DECLARED_SCOPE_ONLY",
+  "integration_claim": "UNPROVEN",
+  "nonclaims": [
+    "READPROOF_NE_INTEGRATION",
+    "PICKUP_NE_CANON",
+    "PICKUP_NE_RUNTIME",
+    "PICKUP_NE_COEX",
+    "DONATION_DISPOSITION_NE_MERGE",
+    "FLEET_PROJECTION_NE_OUTPUT_CONTRACT_TOTALITY"
+  ]
+}
